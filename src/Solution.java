@@ -7,7 +7,6 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
-
         LinkedList<Integer> list = new LinkedList<>();
 
         for (int i = 0; i < n; i++) {
@@ -16,15 +15,23 @@ public class Solution {
 
         ListIterator<Integer> iterator = list.listIterator();
 
+        // Forward traversal
         System.out.print("Forward: ");
         while (iterator.hasNext()) {
-            System.out.print(iterator.next() + " ");
+            System.out.print(iterator.next());
+            if (iterator.hasNext()) {
+                System.out.print(" ");
+            }
         }
         System.out.println();
 
+        // Backward traversal
         System.out.print("Backward: ");
         while (iterator.hasPrevious()) {
-            System.out.print(iterator.previous() + " ");
+            System.out.print(iterator.previous());
+            if (iterator.hasPrevious()) {
+                System.out.print(" ");
+            }
         }
 
         scanner.close();
